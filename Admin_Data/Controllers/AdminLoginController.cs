@@ -16,9 +16,21 @@ namespace Admin_Data.Controllers
             adminLoginService = new AdminLoginService(adminDBContext);
         }
         [HttpPost]
-        public IActionResult AdminLogin(AdminLogin Details)
+        public IActionResult AdminLogin(AdminLogin form)
         {
+            Console.WriteLine(form.tblPassword);
+            Console.WriteLine(form.tblUsername);
+            AdminLogin Details = new AdminLogin();
+            Details.tblUsername= form.tblUsername;
+            Details.tblPassword= form.tblPassword;
             return Ok(adminLoginService.AdminLogin(Details));
         }
+
+        //[HttpGet]
+        //public IActionResult AdminLogin()
+        //{
+        //    Console.WriteLine("Hello");
+        //    return Ok();
+        //}
     }
 }
