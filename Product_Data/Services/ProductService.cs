@@ -18,5 +18,10 @@ namespace Product_Data.Services
         {
             return productRepository.GetProducts();
         }
+
+        public Boolean UpdatesProduct(string ProductType, Product NewProduct)
+        {
+            return productRepository.UpdatesProduct(ProductType,NewProduct);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Product_Data.DataContext;
+using Product_Data.Models;
 using Product_Data.Services;
 
 namespace Product_Data.Controllers
@@ -19,6 +20,12 @@ namespace Product_Data.Controllers
         public IActionResult GetProducts()
         {
             return Ok(productService.GetProducts());
+        }
+
+        [HttpPost]
+        public IActionResult UpdateProduct(string ProductType, Product NewProduct)
+        {
+            return Ok(productService.UpdatesProduct(ProductType,NewProduct));
         }
     }
 }
