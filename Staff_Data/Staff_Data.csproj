@@ -27,4 +27,8 @@
     <None Include="D:\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pump_Data\Pump_Data.csproj" />
+  </ItemGroup>
+
 </Project>

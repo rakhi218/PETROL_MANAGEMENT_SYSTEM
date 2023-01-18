@@ -2,6 +2,7 @@
 using Admin_Data.Models;
 using Admin_Data.Services;
 using Microsoft.AspNetCore.Mvc;
+using Pump_Data.Models;
 
 namespace Admin_Data.Controllers
 {
@@ -16,21 +17,29 @@ namespace Admin_Data.Controllers
             adminLoginService = new AdminLoginService(adminDBContext);
         }
         [HttpPost]
-        public IActionResult AdminLogin(AdminLogin form)
+        public IActionResult AdminLogin(AdminLogin Details)
         {
-            Console.WriteLine(form.tblPassword);
-            Console.WriteLine(form.tblUsername);
-            AdminLogin Details = new AdminLogin();
-            Details.tblUsername= form.tblUsername;
-            Details.tblPassword= form.tblPassword;
-            return Ok(adminLoginService.AdminLogin(Details));
+            try
+            {
+                bool status = adminLoginService.AdminLogin(Details);
+                JsonResponse jsonResponse = new JsonResponse(); 
+                if (status)
+                {
+                    jsonResponse.Result = true;
+                    jsonResponse.Message = "Login Sucess";
+                }
+                else
+                {
+                    jsonResponse.Result = false;
+                    jsonResponse.Message = "Login failed";
+                }
+                return Ok(jsonResponse);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
-        //[HttpGet]
-        //public IActionResult AdminLogin()
-        //{
-        //    Console.WriteLine("Hello");
-        //    return Ok();
-        //}
     }
 }

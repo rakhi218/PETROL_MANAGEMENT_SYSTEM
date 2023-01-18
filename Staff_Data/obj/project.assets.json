@@ -1708,6 +1708,26 @@
             "rid": "win"
           }
         }
+      },
+      "Pump_Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Pump_Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pump_Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -4738,6 +4758,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Pump_Data/1.0.0": {
+      "type": "project",
+      "path": "../Pump_Data/Pump_Data.csproj",
+      "msbuildProject": "../Pump_Data/Pump_Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4748,6 +4773,7 @@
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
+      "Pump_Data >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -4783,7 +4809,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Back End\\PETROL_MANAGEMENT_SYSTEM\\PETROL_MANAGEMENT_SYSTEM\\Pump_Data\\Pump_Data.csproj": {
+              "projectPath": "D:\\Back End\\PETROL_MANAGEMENT_SYSTEM\\PETROL_MANAGEMENT_SYSTEM\\Pump_Data\\Pump_Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

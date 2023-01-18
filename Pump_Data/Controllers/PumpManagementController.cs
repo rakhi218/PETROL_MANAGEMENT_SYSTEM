@@ -19,25 +19,89 @@ namespace Pump_Data.Controllers
         [HttpGet]
         public IActionResult GetAllPumps()
         {
-            return Ok(pumpManagementService.GetAllPumps());
+            try
+            {
+                return Ok(pumpManagementService.GetAllPumps());
+            }
+            catch
+            {
+                return BadRequest("Failed to get the data of all the pumps");
+            }
         }
 
         [HttpPost]
         public IActionResult CreatePump(PumpManagement Pump)
         {
-            return Ok(pumpManagementService.CreatePump(Pump));
+            try
+            {
+                bool status = pumpManagementService.CreatePump(Pump);
+                JsonResponse jsonResponse= new JsonResponse();
+                if (status)
+                {
+                    jsonResponse.Result = true;
+                    jsonResponse.Message = "Pump Added Successfully";
+                }
+                else
+                {
+                    jsonResponse.Result = false;
+                    jsonResponse.Message = "Pump Addition Failed";
+                }
+                return Ok(jsonResponse);
+            }
+            catch
+            {
+                return BadRequest("Creation of new pump failed");
+            }
         }
 
         [HttpPut]
         public IActionResult UpdatePump(short PumpId,PumpManagement NewPump)
         {
-            return Ok(pumpManagementService.UpdatePump(PumpId,NewPump));
+            try
+            {
+                bool status = pumpManagementService.UpdatePump(PumpId, NewPump);
+                JsonResponse jsonResponse = new JsonResponse();
+                if (status)
+                {
+                    jsonResponse.Result = true;
+                    jsonResponse.Message = "Pump Updated Successfully";
+                }
+                else
+                {
+                    jsonResponse.Result = false;
+                    jsonResponse.Message = "Pump with Id" + PumpId + "Is Not Present";
+                }
+                return Ok(jsonResponse);
+            }
+            catch
+            {
+                return BadRequest("Update Failed");
+            }
         }
 
         [HttpDelete]
         public IActionResult DeletePump(short PumpId)
         {
-            return Ok(pumpManagementService.DeletePump(PumpId));
+            try
+            {
+                bool status = pumpManagementService.DeletePump(PumpId);
+                JsonResponse jsonResponse = new JsonResponse();
+                if (status)
+                {
+                    jsonResponse.Result = true;
+                    jsonResponse.Message = "Pump Deleted Successfully";
+                }
+                else
+                {
+                    jsonResponse.Result = false;
+                    jsonResponse.Message = "Pump with Id" + PumpId + "Is Not Present";
+                }
+                return Ok(jsonResponse);
+            }
+            catch
+            {
+                return BadRequest("Deletion Failed");
+            }
         }
     }
 }

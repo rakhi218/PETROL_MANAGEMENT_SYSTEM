@@ -14,19 +14,35 @@ namespace Product_Data.Repositories
 
         public IEnumerable<Product> GetProducts() 
         {
-            return productDBContext.Products_Data.ToList();
+            try
+            {
+                return productDBContext.Products_Data.ToList();
+            }
+            catch
+            {
+                //left for logging
+                return null;
+            }
         }
 
         public Boolean UpdatesProduct(string ProductType,Product NewProduct)
         {
-            var product = productDBContext.Products_Data.Find(ProductType);
-            if (product != null)
+            try
             {
-                product.tblCost = NewProduct.tblCost;
-                productDBContext.SaveChanges();
-                return true;
+                var product = productDBContext.Products_Data.Find(ProductType);
+                if (product != null)
+                {
+                    product.tblCost = NewProduct.tblCost;
+                    productDBContext.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch
+            {
+                //left for logging
+                throw null;
+            }
         }
     }
 }

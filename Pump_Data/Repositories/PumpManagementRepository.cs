@@ -14,40 +14,72 @@ namespace Pump_Data.Repositories
 
         public IEnumerable<PumpManagement> GetAllPumps()
         {
-            return pumpDBContext.Pump_Data.ToList();
+            try
+            {
+                return pumpDBContext.Pump_Data.ToList();
+            }
+            catch
+            {
+                //left for logging
+                throw null;
+            }
         }
 
         public Boolean CreatePump(PumpManagement Pump)
         {
-            pumpDBContext.Pump_Data.Add(Pump);
-            pumpDBContext.SaveChanges();
-            return true;
+            try
+            {
+                pumpDBContext.Pump_Data.Add(Pump);
+                pumpDBContext.SaveChanges();
+                return true;
+            }
+            catch 
+            {
+                //left for logging
+                throw null;
+            }
         }
 
         public Boolean UpdatePump(short PumpId, PumpManagement NewPump)
         {
-            var Pump = pumpDBContext.Pump_Data.Find(PumpId);
-            if(Pump!=null)
+            try
             {
-                Pump.tblResetValue = NewPump.tblResetValue;
-                Pump.tblLastReading = NewPump.tblLastReading;
-                Pump.tblPumpType = NewPump.tblPumpType;
-                pumpDBContext.SaveChanges();
-                return true;
+                var Pump = pumpDBContext.Pump_Data.Find(PumpId);
+                if(Pump!=null)
+                {
+                    Pump.tblResetValue = NewPump.tblResetValue;
+                    Pump.tblLastReading = NewPump.tblLastReading;
+                    Pump.tblPumpType = NewPump.tblPumpType;
+                    pumpDBContext.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch
+            {
+                //left for logging
+                throw null;
+            }
         }
 
         public Boolean DeletePump(short PumpId)
         {
-            var Pump = pumpDBContext.Pump_Data.Find(PumpId);
-            if(Pump!= null)
+            try
             {
-                pumpDBContext.Pump_Data.Remove(Pump);
-                pumpDBContext.SaveChanges();
-                return true;
+                var Pump = pumpDBContext.Pump_Data.Find(PumpId);
+                if(Pump!= null)
+                {
+                    pumpDBContext.Pump_Data.Remove(Pump);
+                    pumpDBContext.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch
+            {
+                //left for logging
+                throw null;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Admin_Data.DataContext;
 using Admin_Data.Models;
 using System.Text;
-using XSystem.Security.Cryptography;
+using System.Security.Cryptography;
 
 namespace Admin_Data.Repositories
 {
@@ -16,21 +16,27 @@ namespace Admin_Data.Repositories
 
         public Boolean AdminLogin(AdminLogin Details)
         {
-            var data = adminDBContext.Admin_Data.Find(Details.tblUsername);
-            if (data == null)
+            try
             {
-                return false;
-            }
-            else
-            {
-                string password = this.encryption(Details.tblPassword);
-                Console.WriteLine(password);
-                Console.WriteLine(data.tblPassword);
-                if (password.Equals(data.tblPassword))
+                var data = adminDBContext.Admin_Data.Find(Details.tblUsername);
+                if (data == null)
                 {
-                    return true;
+                    return false;
                 }
-                return false;
+                else
+                {
+                    string password = this.encryption(Details.tblPassword);
+                    if (password.Equals(data.tblPassword))
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch
+            {
+                //left for logging
+                throw null;
             }
 
         }

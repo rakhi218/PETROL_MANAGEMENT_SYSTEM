@@ -2,6 +2,7 @@
 using Product_Data.DataContext;
 using Product_Data.Models;
 using Product_Data.Services;
+using Pump_Data.Models;
 
 namespace Product_Data.Controllers
 {
@@ -18,14 +19,39 @@ namespace Product_Data.Controllers
 
         [HttpGet]
         public IActionResult GetProducts()
-        {
-            return Ok(productService.GetProducts());
+        {   try
+            {
+                return Ok(productService.GetProducts());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
         public IActionResult UpdateProduct(string ProductType, Product NewProduct)
         {
-            return Ok(productService.UpdatesProduct(ProductType,NewProduct));
+            try
+            {
+                bool status = productService.UpdatesProduct(ProductType, NewProduct);
+                JsonResponse jsonResponse = new JsonResponse();
+                if(status)
+                {
+                    jsonResponse.Result = true;
+                    jsonResponse.Message = "Update Successful";
+                }
+                else
+                {
+                    jsonResponse.Result = true;
+                    jsonResponse.Message = "Update Failed";
+                }
+                return Ok(jsonResponse);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
