@@ -188,3 +188,8 @@ D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\obj\Deb
 D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\obj\Debug\net6.0\Staff_Data.pdb
 D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\obj\Debug\net6.0\Staff_Data.genruntimeconfig.cache
 D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\obj\Debug\net6.0\ref\Staff_Data.dll
+D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\bin\Debug\net6.0\Pump_Data.deps.json
+D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\bin\Debug\net6.0\Pump_Data.runtimeconfig.json
+D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\bin\Debug\net6.0\Pump_Data.exe
+D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\bin\Debug\net6.0\Pump_Data.dll
+D:\Back End\PETROL_MANAGEMENT_SYSTEM\PETROL_MANAGEMENT_SYSTEM\Staff_Data\bin\Debug\net6.0\Pump_Data.pdb

@@ -26,6 +26,7 @@ namespace Admin_Data.Repositories
                 else
                 {
                     string password = this.encryption(Details.tblPassword);
+                    Console.WriteLine(password);
                     if (password.Equals(data.tblPassword))
                     {
                         return true;
