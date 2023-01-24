@@ -6,6 +6,6 @@ namespace Product_Data.Services.Interfaces
     {
         public IEnumerable<Product> GetProducts();
 
-        public Boolean UpdatesProduct(string ProductType, Product NewProduct);
+        public Boolean UpdatesProduct(Double cost1, Double cost2, Double cost3, Double cost4);
     }
 }

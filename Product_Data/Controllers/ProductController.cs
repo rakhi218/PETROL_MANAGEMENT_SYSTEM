@@ -30,11 +30,12 @@ namespace Product_Data.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateProduct(string ProductType, Product NewProduct)
+        public IActionResult UpdateProduct(Double cost1, Double cost2, Double cost3, Double cost4)
         {
             try
             {
-                bool status = productService.UpdatesProduct(ProductType, NewProduct);
+                Console.WriteLine("hello");
+                bool status = productService.UpdatesProduct(cost1, cost2, cost3, cost4);
                 JsonResponse jsonResponse = new JsonResponse();
                 if(status)
                 {

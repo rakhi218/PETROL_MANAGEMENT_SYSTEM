@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TRa1rJNy6+4LQVHTWsSMzMqHRr6h1cXj6TZ9TuGem9sjjjwwel4fWO19i8DIOuYQp50+IyLXzR+15/VMpX5F8A==",
+  "dgSpecHash": "YSmp1ZzlqOAOzmwSaVxDJoMOCHvA0kyRv431WR7RKZbqNS0ZG2fdwbUmRAQLoDvzbB9LdwfJjbHrClFJ8mQ7hQ==",
   "success": true,
   "projectFilePath": "D:\\Back End\\PETROL_MANAGEMENT_SYSTEM\\PETROL_MANAGEMENT_SYSTEM\\Admin_Data\\Admin_Data.csproj",
   "expectedPackageFiles": [
@@ -64,6 +64,10 @@
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog\\5.1.1\\nlog.5.1.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog.database\\5.1.1\\nlog.database.5.1.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog.extensions.logging\\5.2.1\\nlog.extensions.logging.5.2.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog.web.aspnetcore\\5.2.1\\nlog.web.aspnetcore.5.2.1.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

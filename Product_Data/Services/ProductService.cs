@@ -19,9 +19,9 @@ namespace Product_Data.Services
             return productRepository.GetProducts();
         }
 
-        public Boolean UpdatesProduct(string ProductType, Product NewProduct)
+        public Boolean UpdatesProduct(Double cost1, Double cost2, Double cost3, Double cost4)
         {
-            return productRepository.UpdatesProduct(ProductType,NewProduct);
+            return productRepository.UpdatesProduct(cost1, cost2, cost3, cost4);
         }
     }
 }

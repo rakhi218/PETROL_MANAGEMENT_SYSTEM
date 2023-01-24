@@ -25,18 +25,25 @@ namespace Product_Data.Repositories
             }
         }
 
-        public Boolean UpdatesProduct(string ProductType,Product NewProduct)
+        public Boolean UpdatesProduct(Double cost1, Double cost2, Double cost3, Double cost4)
         {
             try
             {
-                var product = productDBContext.Products_Data.Find(ProductType);
-                if (product != null)
-                {
-                    product.tblCost = NewProduct.tblCost;
-                    productDBContext.SaveChanges();
-                    return true;
-                }
-                return false;
+                var AGO = productDBContext.Products_Data.Where(s => s.tblProductType == "AGO").First();
+                AGO.tblCost = cost1;
+
+                var DPK = productDBContext.Products_Data.Where(s => s.tblProductType == "DPK").First();
+                DPK.tblCost = cost3;
+
+                var PMS = productDBContext.Products_Data.Where(s => s.tblProductType == "PMS").First();
+                PMS.tblCost = cost4;
+
+                var BULK = productDBContext.Products_Data.Where(s => s.tblProductType == "BULK").First();
+                BULK.tblCost = cost2;
+
+                productDBContext.SaveChanges();
+
+                return true;
             }
             catch
             {
