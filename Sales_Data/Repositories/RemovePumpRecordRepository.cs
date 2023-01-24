@@ -59,7 +59,7 @@ namespace Sales_Data.Repositories
                 {
                     return false;
                 }
-                var PumpSales = SalesDBContext.Sales_Data.Where(s => s.tblShiftPump == jsonData.tblPumpID && s.tblShift == jsonData.tblShift && s.tblStaffID == jsonData.tblStaffID && s.tblDate == jsonData.tblDate2).FirstOrDefault();
+                var PumpSales = SalesDBContext.Sales_Data.Where(s => s.tblShiftPump == jsonData.tblPumpID && s.tblShift == jsonData.tblShift && s.tblStaffID == jsonData.tblStaffID && DateTime.Compare(s.tblDate.Date, jsonData.tblDate2.Date) == 0).FirstOrDefault();
                 if (PumpSales == null)
                 {
                     return false;

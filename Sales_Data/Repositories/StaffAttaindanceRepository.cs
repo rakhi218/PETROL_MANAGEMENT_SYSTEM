@@ -21,7 +21,7 @@ namespace Sales_Data.Repositories
         {
             try
             {
-                var newData = salesDBContext.Sales_Data.Where(s => s.tblStaffID == tblStaffId && s.tblDate == tblDate).FirstOrDefault();
+                var newData = salesDBContext.Sales_Data.Where(s => s.tblStaffID == tblStaffId && DateTime.Compare(s.tblDate.Date, tblDate.Date) == 0).FirstOrDefault();
                 if (newData == null)
                 {
                     return new SalesRecord();
@@ -40,7 +40,7 @@ namespace Sales_Data.Repositories
         {
             try
             {
-                var data = salesDBContext.Sales_Data.Where(s => s.tblStaffID == tblStaffId && s.tblDate == tblDate).FirstOrDefault();
+                var data = salesDBContext.Sales_Data.Where(s => s.tblStaffID == tblStaffId && DateTime.Compare(s.tblDate.Date, tblDate.Date) == 0).FirstOrDefault();
                 if (data == null)
                 {
                     return false;

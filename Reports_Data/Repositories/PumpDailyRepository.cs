@@ -15,7 +15,7 @@ namespace Reports_Data.Repositories
         {
             try
             {
-                var data = staffSalaryDBContext.pump_data.Where(p => p.tblShift == shift && DateTime.Compare(p.tblDate.Date,date) == 0).ToList();
+                var data = staffSalaryDBContext.pump_data.Where(p => p.tblShift == shift && DateTime.Compare(p.tblDate.Date,date.Date) == 0).ToList();
                 return data;
             }catch
             {

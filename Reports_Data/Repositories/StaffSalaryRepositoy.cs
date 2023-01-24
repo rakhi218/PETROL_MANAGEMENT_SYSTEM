@@ -37,7 +37,7 @@ namespace Reports_Data.Repositories
                     int dblBonus = 0;
                     double dblSalary = 0;
                     float pmsSales = 0;
-                    var sales_data = staffSalaryDBContext1.Sales_Data.Where(s => s.tblStaffID == s.tblStaffID && s.tblDate >= date1 && s.tblDate <= date2).ToList();
+                    var sales_data = staffSalaryDBContext1.Sales_Data.Where(sa => sa.tblStaffID == s.tblStaffID && DateTime.Compare(sa.tblDate.Date, date1.Date) >= 0 && DateTime.Compare(sa.tblDate.Date, date2.Date) <= 0).ToList();
                     foreach(SalesRecord salesRecord in sales_data)
                     {
                         if (salesRecord.tblAttendance == "Present")
