@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YNL8gaNPE+WcPFtp99+HLzxCbUnfbE8qf/R4pEt4YQVPgttXLHo2h1/kTjaPASJsxK5MPTxdgzbj7ZcQrogjZA==",
+  "dgSpecHash": "nhjJDkSY6IarXUw8uferQdr18c10NAQffpGbx8x8vNIX7EJU3+CQSwUQBrwN/JuR6Yg/l4uNzryXnFqU2reDjA==",
   "success": true,
   "projectFilePath": "D:\\Back End\\PETROL_MANAGEMENT_SYSTEM\\PETROL_MANAGEMENT_SYSTEM\\Reports_Data\\Reports_Data.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,10 @@
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog\\5.1.1\\nlog.5.1.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog.database\\5.1.1\\nlog.database.5.1.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog.extensions.logging\\5.2.1\\nlog.extensions.logging.5.2.1.nupkg.sha512",
+    "C:\\Users\\rakesh_vanga\\.nuget\\packages\\nlog.web.aspnetcore\\5.2.1\\nlog.web.aspnetcore.5.2.1.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\rakesh_vanga\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

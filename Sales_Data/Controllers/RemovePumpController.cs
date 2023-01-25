@@ -3,6 +3,8 @@ using Sales_Data.DataContext;
 using Sales_Data.Models;
 using Pump_Data.Models;
 using Sales_Data.Services;
+using NLog;
+using ILogger = NLog.ILogger;
 
 namespace Sales_Data.Controllers
 {
@@ -11,6 +13,9 @@ namespace Sales_Data.Controllers
     public class RemovePumpController : Controller
     {
         RemovePumpRecordService removePumpRecordService;
+
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
+
         public RemovePumpController(SalesDBContext salesDBContext) 
         {
             removePumpRecordService = new RemovePumpRecordService(salesDBContext);
@@ -23,7 +28,8 @@ namespace Sales_Data.Controllers
                 return Ok(removePumpRecordService.GetPumpDetails(PumpId,tblFinalLitres));
             }catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -47,7 +53,8 @@ namespace Sales_Data.Controllers
             }
             catch(Exception ex) 
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

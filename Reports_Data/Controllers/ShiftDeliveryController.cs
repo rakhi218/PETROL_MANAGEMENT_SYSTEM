@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NLog;
 using Reports_Data.DBContext;
 using Reports_Data.Services;
+using ILogger = NLog.ILogger;
 
 namespace Reports_Data.Controllers
 {
@@ -9,6 +11,9 @@ namespace Reports_Data.Controllers
     public class ShiftDeliveryController : Controller
     {
         ShiftDeliveryService shiftDeliveryService;
+
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
+
         public ShiftDeliveryController(StaffSalaryDBContext staffSalaryDBContext)
         {
             shiftDeliveryService = new ShiftDeliveryService(staffSalaryDBContext);
@@ -23,7 +28,8 @@ namespace Reports_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
             
         }

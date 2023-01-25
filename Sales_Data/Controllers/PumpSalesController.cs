@@ -3,7 +3,11 @@ using Sales_Data.DataContext;
 using Sales_Data.Models;
 using Sales_Data.Services;
 using Pump_Data.Models;
-using System.Text.Json;
+
+using ILogger = NLog.ILogger;
+using NLog;
+
+
 
 namespace Sales_Data.Controllers
 {
@@ -11,7 +15,9 @@ namespace Sales_Data.Controllers
     [Route("api/[controller]")]
     public class PumpSalesController : Controller
     {
-        PumpSalesService pumpSalesService; 
+        PumpSalesService pumpSalesService;
+
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
         public PumpSalesController(SalesDBContext salesDBContext) 
         {
             pumpSalesService = new PumpSalesService(salesDBContext);
@@ -39,7 +45,8 @@ namespace Sales_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -64,7 +71,8 @@ namespace Sales_Data.Controllers
                 return Ok(jsonResponse);
             }catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

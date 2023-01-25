@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NLog;
 using Reports_Data.DBContext;
 using Reports_Data.Services;
 using Reports_Data.Services.Interfaces;
+using ILogger = NLog.ILogger;
 
 
 namespace Reports_Data.Controllers
@@ -11,6 +13,9 @@ namespace Reports_Data.Controllers
     public class StaffSalaryController : Controller
     {
         StaffSalaryService staffSalaryService;
+
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
+
 
         public StaffSalaryController(StaffSalaryDBContext staffSalaryDBContext)
         {
@@ -26,7 +31,8 @@ namespace Reports_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

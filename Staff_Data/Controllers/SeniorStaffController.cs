@@ -3,6 +3,8 @@ using Staff_Data.DataContext;
 using Staff_Data.Models;
 using Staff_Data.Services;
 using Pump_Data.Models;
+using NLog;
+using ILogger = NLog.ILogger;
 
 namespace Staff_Data.Controllers
 {
@@ -11,6 +13,8 @@ namespace Staff_Data.Controllers
     public class SeniorStaffController : Controller
     {
         private SeniorStaffService staffService;
+
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
         public SeniorStaffController(StaffDBContext dbContext)
         {
             staffService = new SeniorStaffService(dbContext);
@@ -25,7 +29,8 @@ namespace Staff_Data.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -38,7 +43,8 @@ namespace Staff_Data.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -62,7 +68,8 @@ namespace Staff_Data.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
 
         }
@@ -87,7 +94,8 @@ namespace Staff_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -112,7 +120,8 @@ namespace Staff_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
 
         }
@@ -137,7 +146,8 @@ namespace Staff_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
 
         }
@@ -163,7 +173,8 @@ namespace Staff_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
 
         }
@@ -178,7 +189,8 @@ namespace Staff_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -192,7 +204,8 @@ namespace Staff_Data.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

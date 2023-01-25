@@ -3,6 +3,9 @@ using Product_Data.DataContext;
 using Product_Data.Models;
 using Product_Data.Services;
 using Pump_Data.Models;
+using NLog;
+using ILogger = NLog.ILogger;
+
 
 namespace Product_Data.Controllers
 {
@@ -12,6 +15,7 @@ namespace Product_Data.Controllers
     {
         ProductService productService;
 
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
         public ProductController(ProductDBContext productDBContext) 
         {
             productService = new ProductService(productDBContext);
@@ -25,17 +29,18 @@ namespace Product_Data.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
         [HttpPost]
-        public IActionResult UpdateProduct(Double cost1, Double cost2, Double cost3, Double cost4)
+        public IActionResult UpdateProduct(ProductCost obj)
         {
             try
             {
                 Console.WriteLine("hello");
-                bool status = productService.UpdatesProduct(cost1, cost2, cost3, cost4);
+                bool status = productService.UpdatesProduct(obj.Cost1,obj.Cost2,obj.Cost3,obj.Cost4);
                 JsonResponse jsonResponse = new JsonResponse();
                 if(status)
                 {
@@ -51,7 +56,8 @@ namespace Product_Data.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

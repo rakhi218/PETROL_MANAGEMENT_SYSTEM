@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NLog;
 using Pump_Data.DataContext;
 using Pump_Data.Models;
 using Pump_Data.Services;
-
+using ILogger = NLog.ILogger;
 namespace Pump_Data.Controllers
 {
     [ApiController]
@@ -10,6 +11,7 @@ namespace Pump_Data.Controllers
     public class PumpManagementController : Controller
     {
         PumpManagementService pumpManagementService;
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
 
         public PumpManagementController(PumpDBContext pumpDBContext)
         {
@@ -23,9 +25,10 @@ namespace Pump_Data.Controllers
             {
                 return Ok(pumpManagementService.GetAllPumps());
             }
-            catch
+            catch(Exception ex)
             {
-                return BadRequest("Failed to get the data of all the pumps");
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -48,9 +51,10 @@ namespace Pump_Data.Controllers
                 }
                 return Ok(jsonResponse);
             }
-            catch
+            catch(Exception ex)
             {
-                return BadRequest("Creation of new pump failed");
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -73,9 +77,10 @@ namespace Pump_Data.Controllers
                 }
                 return Ok(jsonResponse);
             }
-            catch
+            catch(Exception ex)
             {
-                return BadRequest("Update Failed");
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -98,9 +103,10 @@ namespace Pump_Data.Controllers
                 }
                 return Ok(jsonResponse);
             }
-            catch
+            catch(Exception ex)
             {
-                return BadRequest("Deletion Failed");
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

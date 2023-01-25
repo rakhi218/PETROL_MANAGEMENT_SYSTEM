@@ -2,7 +2,9 @@
 using Admin_Data.Models;
 using Admin_Data.Services;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 using Pump_Data.Models;
+using ILogger = NLog.ILogger;
 
 namespace Admin_Data.Controllers
 {
@@ -11,6 +13,8 @@ namespace Admin_Data.Controllers
     public class AdminLoginController : Controller
     {
         AdminLoginService adminLoginService;
+
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
 
         public AdminLoginController(AdminDBContext adminDBContext)
         {
@@ -33,11 +37,13 @@ namespace Admin_Data.Controllers
                     jsonResponse.Result = false;
                     jsonResponse.Message = "Login failed";
                 }
+                logger.Info("sucess");
                 return Ok(jsonResponse);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                logger.Error(ex.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 

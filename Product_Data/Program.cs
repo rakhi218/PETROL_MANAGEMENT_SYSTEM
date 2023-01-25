@@ -1,7 +1,12 @@
 using Product_Data.DataContext;
 using Microsoft.EntityFrameworkCore;
+using NLog.Extensions.Logging;
+using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 // Add services to the container.
 
