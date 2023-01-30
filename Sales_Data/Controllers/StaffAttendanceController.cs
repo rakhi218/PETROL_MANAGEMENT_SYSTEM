@@ -21,12 +21,14 @@ namespace Sales_Data.Controllers
             staffAttaindanceService = new StaffAttaindanceService(salesDBContext);
         }
 
-        [HttpGet]
-        public IActionResult GetStaffEntry(string tblStaffId,DateTime tblDate)
+        [HttpPost]
+        public IActionResult GetStaffEntry(PumpDetails details)
         {
+            Console.WriteLine(details.ToString());
+            DateTime dateTime = details.tblDate.ToDateTime(TimeOnly.Parse("10:00PM"));
             try
             {
-                return Ok(staffAttaindanceService.GetStaffEntry(tblStaffId, tblDate));
+                return Ok(staffAttaindanceService.GetStaffEntry(details.tblStaffId, dateTime));
             }
             catch (Exception ex)
             {
@@ -35,12 +37,15 @@ namespace Sales_Data.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult RemoveStaffEntry(string tblStaffId,DateTime tblDate) 
+        [HttpPost]
+        [Route("deleteStaff")]
+        public IActionResult RemoveStaffEntry(PumpDetails details) 
         {
-            bool status = staffAttaindanceService.RemoveStaffEntry(tblStaffId, tblDate);
+            Console.WriteLine(details.ToString());
+            DateTime dateTime = details.tblDate.ToDateTime(TimeOnly.Parse("10:00PM"));
             try
             {
+                bool status = staffAttaindanceService.RemoveStaffEntry(details.tblStaffId, dateTime);
                 JsonResponse jsonResponse = new JsonResponse();
                 if (status)
                 {

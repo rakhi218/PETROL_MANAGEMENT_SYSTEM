@@ -19,6 +19,8 @@ namespace Sales_Data.Repositories
 
         public SalesRecord GetStaffEntry(string tblStaffId, DateTime tblDate)
         {
+            Console.WriteLine(tblStaffId);
+            Console.WriteLine(tblDate);
             try
             {
                 var newData = salesDBContext.Sales_Data.Where(s => s.tblStaffID == tblStaffId && DateTime.Compare(s.tblDate.Date, tblDate.Date) == 0).FirstOrDefault();

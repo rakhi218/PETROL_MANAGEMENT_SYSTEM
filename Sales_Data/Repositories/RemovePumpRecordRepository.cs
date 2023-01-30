@@ -15,6 +15,8 @@ namespace Sales_Data.Repositories
 
         public JsonData GetPumpDetails(int PumpId, double tblFinalLitres)
         {
+            Console.WriteLine(PumpId);
+            Console.WriteLine(tblFinalLitres);
             try
             {
                 var pumpRecord = SalesDBContext.Pump_Data.Where(s => s.tblPumpID == PumpId && s.tblFinalLitres == tblFinalLitres).FirstOrDefault();
@@ -46,6 +48,7 @@ namespace Sales_Data.Repositories
         
         public Boolean DeletPumpDetails(JsonData jsonData)
         {
+            Console.Write(jsonData.ToString());
             try
             {
                 var data = SalesDBContext.Pump_Manage_Data.Where(s => s.tblPumpID == jsonData.tblPumpID).FirstOrDefault();

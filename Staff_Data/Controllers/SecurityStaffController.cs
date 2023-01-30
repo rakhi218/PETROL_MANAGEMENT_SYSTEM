@@ -74,13 +74,13 @@ namespace Staff_Data.Controllers
         }
 
         [HttpPost]
-        [Route("retrench/{id}")]
-        public IActionResult RetrenchStaff([FromRoute] string id)
+        [Route("retrench")]
+        public IActionResult RetrenchStaff(FormIdData data)
         {
             try
             {
                 JsonResponse jsonResponse = new JsonResponse();
-                if (staffService.RetrenchStaff(id))
+                if (staffService.RetrenchStaff(data.tblStaffID))
                 {
                     jsonResponse.Result = true;
                     jsonResponse.Message = "Retreched Staff Successfully";
@@ -99,13 +99,13 @@ namespace Staff_Data.Controllers
         }
 
         [HttpPost]
-        [Route("suspend/{id}")]
-        public IActionResult SuspendStaff([FromRoute] string id)
+        [Route("suspend")]
+        public IActionResult SuspendStaff(FormIdData data)
         {
             try
             {
                 JsonResponse jsonResponse = new JsonResponse();
-                if (staffService.SuspendStaff(id))
+                if (staffService.SuspendStaff(data.tblStaffID))
                 {
                     jsonResponse.Result = true;
                     jsonResponse.Message = "Suspend Staff Successfully";
@@ -125,13 +125,13 @@ namespace Staff_Data.Controllers
         }
 
         [HttpPost]
-        [Route("recallRetrench/{id}")]
-        public IActionResult RecallRetrenchStaff([FromRoute] string id)
+        [Route("recallRetrench")]
+        public IActionResult RecallRetrenchStaff(FormIdData data)
         {
             try
             {
                 JsonResponse jsonResponse = new JsonResponse();
-                if (staffService.RecallRetrenchStaff(id))
+                if (staffService.RecallRetrenchStaff(data.tblStaffID))
                 {
                     jsonResponse.Result = true;
                     jsonResponse.Message = "Recall Retrenched Staff Successfully";
@@ -152,13 +152,13 @@ namespace Staff_Data.Controllers
         }
 
         [HttpPost]
-        [Route("recallSuspend/{id}")]
-        public IActionResult RecallSuspendStaff([FromRoute] string id)
+        [Route("recallSuspend")]
+        public IActionResult RecallSuspendStaff(FormIdData data)
         {
             try
             {
                 JsonResponse jsonResponse = new JsonResponse();
-                if (staffService.RecallSuspendStaff(id))
+                if (staffService.RecallSuspendStaff(data.tblStaffID))
                 {
                     jsonResponse.Result = true;
                     jsonResponse.Message = "Recall Suspended Staff Successfully";

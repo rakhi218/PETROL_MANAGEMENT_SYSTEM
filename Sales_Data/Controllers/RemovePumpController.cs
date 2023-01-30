@@ -5,6 +5,7 @@ using Pump_Data.Models;
 using Sales_Data.Services;
 using NLog;
 using ILogger = NLog.ILogger;
+using System.Text.Json.Serialization;
 
 namespace Sales_Data.Controllers
 {
@@ -21,11 +22,13 @@ namespace Sales_Data.Controllers
             removePumpRecordService = new RemovePumpRecordService(salesDBContext);
         }
         [HttpPost]
-        public IActionResult GetPumpDetails(int PumpId, double tblFinalLitres)
+        public IActionResult GetPumpDetails(PumpData pumpDetails)
         {
+            Console.WriteLine(pumpDetails.tblPumpID);
+            Console.WriteLine(pumpDetails.tblFinalLitres);
             try
             {
-                return Ok(removePumpRecordService.GetPumpDetails(PumpId,tblFinalLitres));
+                return Ok(removePumpRecordService.GetPumpDetails(pumpDetails.tblPumpID, pumpDetails.tblFinalLitres));
             }catch(Exception ex)
             {
                 logger.Error(ex.ToString());
@@ -33,9 +36,12 @@ namespace Sales_Data.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpPost]
+        [Route("deletepump")]
         public IActionResult DeletPumpDetails(JsonData jsonData)
         {
+            Console.WriteLine(jsonData);
+            
             try
             {
                 JsonResponse jsonResponse = new JsonResponse();
