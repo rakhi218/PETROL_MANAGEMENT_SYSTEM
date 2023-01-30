@@ -58,12 +58,13 @@ namespace Pump_Data.Controllers
             }
         }
 
-        [HttpPut]
-        public IActionResult UpdatePump(short PumpId,PumpManagement NewPump)
+        [HttpPost]
+        [Route("updatePump")]
+        public IActionResult UpdatePump(PumpManagement NewPump)
         {
             try
             {
-                bool status = pumpManagementService.UpdatePump(PumpId, NewPump);
+                bool status = pumpManagementService.UpdatePump(NewPump.tblPumpID, NewPump);
                 JsonResponse jsonResponse = new JsonResponse();
                 if (status)
                 {
@@ -73,7 +74,7 @@ namespace Pump_Data.Controllers
                 else
                 {
                     jsonResponse.Result = false;
-                    jsonResponse.Message = "Pump with Id" + PumpId + "Is Not Present";
+                    jsonResponse.Message = "Pump with Id" + NewPump.tblPumpID + "Is Not Present";
                 }
                 return Ok(jsonResponse);
             }
@@ -84,12 +85,14 @@ namespace Pump_Data.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult DeletePump(short PumpId)
+        [HttpPost]
+        [Route("deletePump")]
+        public IActionResult DeletePump(PumpManagement PumpId)
         {
+            Console.WriteLine(PumpId.ToString());
             try
             {
-                bool status = pumpManagementService.DeletePump(PumpId);
+                bool status = pumpManagementService.DeletePump(PumpId.tblPumpID);
                 JsonResponse jsonResponse = new JsonResponse();
                 if (status)
                 {
