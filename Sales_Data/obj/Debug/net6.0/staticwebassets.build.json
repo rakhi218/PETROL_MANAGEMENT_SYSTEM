@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "lwtl66PJ7sYeglecenARkD2IkF+g3t8u8uHh7B2EHVI=",
+  "Hash": "FV1vXMKjFtwCjevI4k5GxiLCb4yKh+c20ZWbPlV53hE=",
   "Source": "Sales_Data",
   "BasePath": "_content/Sales_Data",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\Back End\\PETROL_MANAGEMENT_SYSTEM\\PETROL_MANAGEMENT_SYSTEM\\Pump_Data\\Pump_Data.csproj",
+      "Identity": "D:\\TrailBackEnd\\PETROL_MANAGEMENT_SYSTEM\\Pump_Data\\Pump_Data.csproj",
       "Version": 2,
       "Source": "Pump_Data",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
