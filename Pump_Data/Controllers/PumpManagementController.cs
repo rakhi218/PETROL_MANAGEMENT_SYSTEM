@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NLog;
 using Pump_Data.DataContext;
 using Pump_Data.Models;
@@ -6,6 +7,7 @@ using Pump_Data.Services;
 using ILogger = NLog.ILogger;
 namespace Pump_Data.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PumpManagementController : Controller

@@ -214,3 +214,4 @@ D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Pump_Data\obj\Debug\net6.0\refint\Pump_
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Pump_Data\obj\Debug\net6.0\Pump_Data.pdb
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Pump_Data\obj\Debug\net6.0\Pump_Data.genruntimeconfig.cache
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Pump_Data\obj\Debug\net6.0\ref\Pump_Data.dll
+D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Pump_Data\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

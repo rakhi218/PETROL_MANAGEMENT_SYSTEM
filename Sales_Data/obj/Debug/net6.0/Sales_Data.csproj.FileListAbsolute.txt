@@ -224,3 +224,4 @@ D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Sales_Data\obj\Debug\net6.0\refint\Sale
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Sales_Data\obj\Debug\net6.0\Sales_Data.pdb
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Sales_Data\obj\Debug\net6.0\Sales_Data.genruntimeconfig.cache
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Sales_Data\obj\Debug\net6.0\ref\Sales_Data.dll
+D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Sales_Data\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

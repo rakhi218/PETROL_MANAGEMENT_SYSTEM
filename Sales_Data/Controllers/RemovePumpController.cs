@@ -6,9 +6,11 @@ using Sales_Data.Services;
 using NLog;
 using ILogger = NLog.ILogger;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sales_Data.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class RemovePumpController : Controller

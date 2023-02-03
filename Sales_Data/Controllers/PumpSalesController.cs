@@ -6,11 +6,11 @@ using Pump_Data.Models;
 
 using ILogger = NLog.ILogger;
 using NLog;
-
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sales_Data.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PumpSalesController : Controller

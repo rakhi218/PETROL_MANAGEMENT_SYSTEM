@@ -5,9 +5,11 @@ using Pump_Data.Models;
 using Sales_Data.Services;
 using NLog;
 using ILogger = NLog.ILogger;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sales_Data.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class StaffAttendanceController : Controller

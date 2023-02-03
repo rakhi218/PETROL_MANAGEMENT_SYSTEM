@@ -6,10 +6,11 @@ using Staff_Data.Services;
 using Pump_Data.Models;
 using NLog;
 using ILogger = NLog.ILogger;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Staff_Data.Controllers
 {
-
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class StaffController : Controller

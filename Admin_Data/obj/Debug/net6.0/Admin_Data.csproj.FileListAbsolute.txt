@@ -293,3 +293,5 @@ D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Admin_Data\obj\Debug\net6.0\refint\Admi
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Admin_Data\obj\Debug\net6.0\Admin_Data.pdb
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Admin_Data\obj\Debug\net6.0\Admin_Data.genruntimeconfig.cache
 D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Admin_Data\obj\Debug\net6.0\ref\Admin_Data.dll
+D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Admin_Data\bin\Debug\net6.0\jose-jwt.dll
+D:\TrailBackEnd\PETROL_MANAGEMENT_SYSTEM\Admin_Data\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
